@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500..700&display=swap");
+
+:root {
+  --red: #9f0505;
+  --white: #fcfcfc;
+  --charcoal: #1f1f1f;
+  --dark-red: #860404;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: var(--charcoal);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-ai-c {
+  align-items: center;
+}
+
+.flex-jc-c {
+  justify-content: center;
+}
+
+.flex-jc-sb {
+  justify-content: space-between;
+}
+
+.relative {
+  position: relative;
+  top: 4.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 80.3125rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.button {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--red);
+  transition: all 300ms ease-in-out;
+}
+
+.button:hover {
+  background: var(--dark-red);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  z-index: 999;
+  overflow: hidden;
+  background: var(--white);
+  transition: height 300ms ease-in-out;
+}
+
+header.open {
+  height: 14.5rem;
+}
+
+header > .container {
+  flex-direction: column;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.toggle-wrapper {
+  width: 100%;
+  margin-bottom: 1.125rem;
+}
+
+.logo {
+  width: 4.875rem;
+}
+
+.logo > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.toggler {
+  display: flex;
+}
+
+nav > ul {
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+nav > ul > li:not(:last-child) {
+  margin: 0 0 1.125rem 0;
+}
+
+nav > ul > li > a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  transition: all 300ms ease-in-out;
+}
+
+nav > ul > li > a:hover {
+  color: var(--red);
+}
+
+#home {
+  left: 0;
+  width: 100%;
+  height: 26.875rem;
+  color: var(--white);
+  background: url("./images/home.png") center/cover no-repeat;
+}
+
+#home::before,
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.625);
+  z-index: 1;
+}
+
+#home > .container {
+  flex-direction: column;
+  z-index: 2;
+}
+
+#home h1 {
+  font-size: 2.25rem;
+}
+
+#home p {
+  line-height: 1.65;
+  max-width: 36.5625rem;
+  margin: 0.75rem 0 1.5rem;
+}
+
+#foods > .container,
+#about .container {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  margin-top: 2.25rem;
+}
+
+.grid-item {
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 1.5rem rgba(30, 40, 90, 0.08);
+}
+
+.grid-item-image {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.grid-item-image > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.grid-item-desc {
+  padding: 1rem 1rem 1.5rem;
+}
+
+.grid-item-desc > h4 {
+  font-size: 1.25rem;
+}
+
+.grid-item-desc > p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+#about .grid-item-image {
+  height: auto;
+}
+
+.clients {
+  margin: 2.5rem 0;
+  flex-direction: column;
+}
+
+.clients > img {
+  width: 6.25rem;
+}
+
+.clients > img:not(:last-child) {
+  margin: 0 0 2.25rem 0;
+}
+
+#contact {
+  left: 0;
+  width: 100%;
+  color: var(--white);
+  background: url("./images/contact.png") center/cover no-repeat;
+}
+
+#contact > .container {
+  flex-direction: column;
+  padding-top: 2.625rem;
+  padding-bottom: 2.625rem;
+  z-index: 2;
+}
+
+#contact p {
+  margin-top: 0.5rem;
+}
+
+#contact form {
+  width: 100%;
+  max-width: 36.5625rem;
+  flex-direction: column;
+  margin-top: 1.375rem;
+}
+
+#contact label {
+  align-self: flex-start;
+  margin-bottom: 0.625rem;
+}
+
+#contact input,
+#contact textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.875rem 0.875rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+#contact textarea {
+  resize: none;
+}
+
+#contact input[type="submit"] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+#contact + .copyright {
+  padding: 1rem 0;
+  color: var(--white);
+  background: var(--charcoal);
+  z-index: 999;
+}
+
+#contact + .copyright > a {
+  color: var(--white);
+}
+
+@media (min-width: 40rem) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #foods > .container,
+  #about .container {
+    padding-top: 2.625rem;
+    padding-bottom: 2.625rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  h2 {
+    font-size: 2.8125rem;
+  }
+
+  .relative {
+    top: 4.6875rem;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  header {
+    height: auto;
+  }
+
+  header > .container {
+    flex-direction: row;
+  }
+
+  .toggle-wrapper {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 6.25rem;
+  }
+
+  .toggler {
+    display: none;
+  }
+
+  nav > ul {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  nav > ul > li:not(:last-child) {
+    margin: 0 2rem 0 0;
+  }
+
+  nav > ul > li > a {
+    font-size: 1.125rem;
+  }
+
+  #home {
+    background: url("./images/home.png") 0 2% / cover no-repeat;
+  }
+
+  #home h1 {
+    font-size: 3.125rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-item-image {
+    width: 24.375rem;
+    height: 28.125rem;
+  }
+
+  #about .grid-item-image {
+    height: 19.0625rem;
+  }
+
+  .grid-item-desc > h4 {
+    font-size: 1.375rem;
+  }
+
+  .clients {
+    flex-direction: row;
+    margin: 3rem 0;
+  }
+
+  .clients > img {
+    width: 8.875rem;
+  }
+
+  .clients > img:not(:last-child) {
+    margin: 0 2.625rem 0 0;
+  }
+
+  #contact > .container {
+    padding-top: 3.75rem;
+    padding-bottom: 3rem;
+  }
+}
